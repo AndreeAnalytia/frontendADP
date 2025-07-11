@@ -1,0 +1,38 @@
+
+
+<app-breadcrumb class="header_breadcrumb" [text]="'Documentación APIs'"></app-breadcrumb>
+
+<div class="mat-elevation-z8" style="padding: 2rem;">
+
+  <section aria-labelledby="doc-postman-title">
+    <h2 id="doc-postman-title" class="header-title">Link Documentación POSTMAN</h2>
+    <a target="_blank" rel="noopener noreferrer" [href]="linkDoc">{{ linkDoc }}</a>
+  </section>
+
+  <br />
+
+  <section aria-labelledby="doc-consult-title">
+    <h2 id="doc-consult-title" class="header-title">Consulta Documento - Ejemplo</h2>
+    <h4 class="header-subtitle">Ruta para la solicitud (POST):</h4>
+    <a target="_blank" rel="noopener noreferrer" [href]="linkConsult">{{ linkConsult }}</a>
+    <div class="body-section">
+      <strong>BODY:</strong>
+      <pre>{{ bodyConsult }}</pre>
+    </div>
+  </section>
+
+  <br />
+
+  <section aria-labelledby="user-create-title">
+    <h2 id="user-create-title" class="header-title">Crear Usuario Clave Sol - Ejemplo</h2>
+    <h4 class="header-subtitle">Ruta para la solicitud (POST):</h4>
+    <a target="_blank" rel="noopener noreferrer" [href]="linkCreate">{{ linkCreate }}</a>
+    <div class="body-section">
+      <strong>BODY:</strong>
+      <pre>{{ bodyCreate }}</pre>
+    </div>
+  </section>
+</div>
+
+  
+  

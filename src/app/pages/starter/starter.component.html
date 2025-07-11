@@ -1,0 +1,88 @@
+
+
+<app-breadcrumb class="header_breadcrumb" [text]="'Gestión de Usuarios'" [isButtonUser]="true"></app-breadcrumb>
+<div class="items-header">
+  <span>&nbsp;</span>
+  <input type="search"  placeholder="Búsqueda por nombre de usuario..." class="input_search" #miInput (keyup.enter)="searchByInput(miInput.value)" (blur)="searchByInput(miInput.value)">
+</div>
+<br>
+<div class="mat-elevation-z8">
+  <div class="table_container">
+    <table mat-table [dataSource]="dataSource">
+      
+      <ng-container matColumnDef="name">
+        <th class="text_header" mat-header-cell *matHeaderCellDef> Name </th>
+        <td class="text_table" mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+      
+      <ng-container matColumnDef="email">
+        <th class="text_header" mat-header-cell *matHeaderCellDef> Email </th>
+        <td class="text_table" mat-cell *matCellDef="let element"> {{element.email}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="token">
+        <th class="text_header" mat-header-cell *matHeaderCellDef> Token </th>
+        <td class="text_table" mat-cell *matCellDef="let element"> {{element.token}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <th class="text_header" mat-header-cell *matHeaderCellDef> Estado </th>
+        <td class="text_table" mat-cell *matCellDef="let element"> 
+          <span class="text_border_blocked" *ngIf="!element.status">{{element.statusName}}</span> 
+          <span class="text_border_active" *ngIf="element.status">{{element.statusName}}</span> </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="accion">
+        <th class="text_header" mat-header-cell *matHeaderCellDef> Acción </th>
+        <td class="text_table icon" mat-cell *matCellDef="let element"> 
+          <svg (click)="openDialogEdit(element.name, element.email, element._id, element.password, element.status, element.token)" stroke="currentColor" fill="none" stroke-width="0" viewBox="0 0 24 24" height="1.5em" width="1.5em" color="#1e88e5" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z">
+            </path>
+          </svg>
+          <svg (click)="openDialogDelete(element.name,element._id)" stroke="currentColor" fill="none" stroke-width="0" viewBox="0 0 24 24" height="1.5em" width="1.5em" color="#1e88e5" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16">
+            </path>
+          </svg>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="lista">
+        <th class="text_header" mat-header-cell *matHeaderCellDef>Users ClaveSol</th>
+        <td class="text_table icon" mat-cell *matCellDef="let element"> 
+          <svg xmlns="http://www.w3.org/2000/svg" (click)="navigate(element)" width="16" height="16" fill="currentColor" class="bi bi-list-ul" viewBox="0 0 16 16" height="2em" width="2em" color="#1e88e5">
+            <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+          </svg>
+        </td>
+      </ng-container>
+      
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table> 
+  </div>
+  <div class="footer">
+    <div>
+      <span>{{this.pagination}} de {{this.paginationTotal}}</span>
+    </div>
+    <div class="items_footer"> 
+      <div class="cursor-pointer">
+        <div class="icon-wrapper text-black-50 icon_pagination" >
+          <svg (click)="previous()" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="icon_footer" xmlns="http://www.w3.org/2000/svg">
+            <path fill="none" d="M0 0h24v24H0z"></path>
+            <path d="M11.67 3.87L9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z"></path>
+          </svg>
+        </div>
+      </div>
+      <span class="text_num">{{num}}</span>
+      <div class="cursor-pointer">
+        <div class="icon-wrapper text-black-50 icon_pagination">
+          <svg stroke="currentColor" (click)="next()" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="icon_footer" xmlns="http://www.w3.org/2000/svg">
+            <path fill="none" d="M0 0h24v24H0V0z"></path>
+            <path d="M6.23 20.23L8 22l10-10L8 2 6.23 3.77 14.46 12z"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>   
+</div>
+  
+  
+  

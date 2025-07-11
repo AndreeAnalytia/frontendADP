@@ -1,0 +1,78 @@
+
+
+<app-breadcrumb class="header_breadcrumb" [text]="'Estadisticas por Usuarios'"></app-breadcrumb>
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <input class="input_search" type="month" [(ngModel)]="selectedMonth" (change)="onMonthChange()" id="start" name="start" min="2018-03" value="2024-04" />
+    <input type="search"  placeholder="Búsqueda por nombre de cliente ..." class="input_search" #miInput (keyup.enter)="searchByInput(miInput.value)" (blur)="searchByInput(miInput.value)">
+  </div>
+<br>
+<div class="mat-elevation-z8">
+  <div class="table_container">
+    <table mat-table [dataSource]="dataSource">
+      
+      <ng-container matColumnDef="user">
+        <th class="text_header" mat-header-cell *matHeaderCellDef> Usuario </th>
+        <td class="text_table" mat-cell *matCellDef="let element"> {{element.user}} </td>
+      </ng-container>
+      
+      <ng-container matColumnDef="countBuy">
+        <th class="text_header" mat-header-cell *matHeaderCellDef> Cant. consultas Compras </th>
+        <td class="text_table" mat-cell *matCellDef="let element"> {{element.countBuys}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="countBuyFailed">
+        <th class="text_header" mat-header-cell *matHeaderCellDef> Cant. Compras no encontradas </th>
+        <td class="text_table"mat-cell *matCellDef="let element"> {{element.countBuysFailed}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="countSale">
+        <th class="text_header" mat-header-cell *matHeaderCellDef> Cant. consultas Ventas </th>
+        <td class="text_table"mat-cell *matCellDef="let element"> {{element.countSales}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="countSaleFailed">
+        <th class="text_header" mat-header-cell *matHeaderCellDef> Cant. Ventas no encontradas </th>
+        <td class="text_table"mat-cell *matCellDef="let element"> {{element.countSalesFailed}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="estadisticas">
+        <th class="text_header" mat-header-cell *matHeaderCellDef>Estadisticas Usuario Clave Sol</th>
+        <td class="text_table icon" mat-cell *matCellDef="let element"> 
+          <svg (click)="navigate(element)" height="2em" width="2em" id="Capa_1" enable-background="new 0 0 496 496" viewBox="0 0 496 496" xmlns="http://www.w3.org/2000/svg"><g><path d="m112 232h-96c-8.837 0-16 7.163-16 16v232c0 8.837 7.163 16 16 16h96c8.837 0 16-7.163 16-16v-232c0-8.837-7.163-16-16-16zm-16 232h-64v-200h64z" fill="#000000" style="fill: rgb(30, 136, 229);"></path>
+            <path d="m296 120h-96c-8.837 0-16 7.163-16 16v344c0 8.837 7.163 16 16 16h96c8.837 0 16-7.163 16-16v-344c0-8.837-7.163-16-16-16zm-16 344h-64v-312h64z" fill="#000000" style="fill: rgb(30, 136, 229);"></path><path d="m480 0h-96c-8.837 0-16 7.163-16 16v464c0 8.837 7.163 16 16 16h96c8.837 0 16-7.163 16-16v-464c0-8.837-7.163-16-16-16zm-16 464h-64v-432h64z" fill="#000000" style="fill: rgb(30, 136, 229);"></path></g>
+          </svg>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table> 
+  </div>
+  <div class="footer">
+    <div>
+      <span>{{this.pagination}} de {{this.paginationTotal}}</span>
+    </div>
+    <div class="items_footer"> 
+      <div class="cursor-pointer">
+        <div class="icon-wrapper text-black-50 icon_pagination" >
+          <svg (click)="previous()" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="icon_footer" xmlns="http://www.w3.org/2000/svg">
+            <path fill="none" d="M0 0h24v24H0z"></path>
+            <path d="M11.67 3.87L9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z"></path>
+          </svg>
+        </div>
+      </div>
+      <span class="text_num">{{num}}</span>
+      <div class="cursor-pointer">
+        <div class="icon-wrapper text-black-50 icon_pagination">
+          <svg stroke="currentColor" (click)="next()" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="icon_footer" xmlns="http://www.w3.org/2000/svg">
+            <path fill="none" d="M0 0h24v24H0V0z"></path>
+            <path d="M6.23 20.23L8 22l10-10L8 2 6.23 3.77 14.46 12z"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>   
+</div>
+  
+  
+  

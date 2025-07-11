@@ -1,0 +1,205 @@
+<!-- <mat-toolbar class="topbar horizontal-topbar">
+  <div style="display:flex; align-items: center;">
+    <img class="img_logo" src="https://analytia.pe/wp-content/uploads/2023/01/logo-analytia__1_-removebg-preview.png"/>
+    <button
+      mat-icon-button
+      (click)="toggleCollapsed.emit()"
+      *ngIf="showToggle"
+      class="d-flex justify-content-center"
+    >
+      <i-tabler name="menu-2" class="icon-20 d-flex"></i-tabler>
+    </button> -->
+  
+    <!-- Mobile Menu -->
+    <!-- <button
+      mat-icon-button
+      (click)="toggleMobileNav.emit()"
+      *ngIf="!showToggle"
+      class="d-flex justify-content-center"
+    >
+      <i-tabler name="menu-2" class="icon-20 d-flex"></i-tabler>
+    </button>
+  </div> -->
+    <!-- --------------------------------------------------------------- -->
+
+    
+
+    <!-- <span class="flex-1-auto"></span> -->
+
+    <!-- --------------------------------------------------------------- -->
+    <!--  Search -->
+   
+
+    <!-- --------------------------------------------------------------- -->
+    <!-- langugage Dropdown -->
+    <!-- --------------------------------------------------------------- -->
+    <!-- <button [matMenuTriggerFor]="flags" mat-icon-button class="m-r-5">
+      <img [src]="selectedLanguage.icon" class="rounded object-cover icon-20" />
+    </button>
+    <mat-menu #flags="matMenu" class="cardWithShadow">
+      <button
+        mat-menu-item
+        *ngFor="let lang of languages"
+        (click)="changeLanguage(lang)"
+      >
+        <div class="d-flex align-items-center">
+          <img [src]="lang.icon" class="rounded object-cover m-r-8 icon-20" />
+          <span class="mat-subtitle-1 f-s-14">{{ lang.language }}</span>
+        </div>
+      </button>
+    </mat-menu> -->
+
+    <!-- --------------------------------------------------------------- -->
+    <!-- Notification Dropdown -->
+    <!-- --------------------------------------------------------------- -->
+    <!-- <button
+    mat-icon-button
+    [matMenuTriggerFor]="notificationmenu"
+    aria-label="Notifications"
+  >
+   matBadge="1" -->
+    <!-- <mat-icon
+      matBadgeOverlap="false"
+      matBadgeColor="warn"
+      class="header-badge"
+      >notifications</mat-icon
+    >
+  </button>
+  <mat-menu #notificationmenu="matMenu">
+    <div class="d-flex align-items-center p-x-32 p-y-16 content-header">
+        <h6 class="f-w-600 m-0 content-header-notification">Notificaciones</h6>
+    </div>
+   
+    <div class="scrollable-card" id="mi" (scroll)="onScroll($event)" >
+      <button
+        mat-menu-item
+        class="p-x-32 p-y-16"
+        *ngFor="let item of this.dataSource"
+        [ngClass]="{'button_disabled_notifications': !item.seen }"
+        
+      >
+        <div>
+          <div>
+            <span class="f-w-600 m-0 f-s-14">Nuevo ticket:</span>
+            <br>
+            <span class="f-s-12">Se ha creado nuevo ticket:&nbsp;</span>
+            <span class="f-w-600 m-0">{{ item.ticket.code }}</span>
+            <div class="f-s-10" style="text-align: right;">
+              <p>{{ item.date }}</p> 
+            </div>
+          </div>
+        </div>
+      </button>
+    </div>
+  </mat-menu>  -->
+
+    <!-- --------------------------------------------------------------- -->
+    <!-- Messages Dropdown -->
+    <!-- --------------------------------------------------------------- -->
+    <!-- <button mat-icon-button [matMenuTriggerFor]="msgmenu" aria-label="Messages">
+      <mat-icon
+        matBadge="2"
+        matBadgeOverlap="false"
+        matBadgeColor="warn"
+        class="header-badge"
+        >email</mat-icon
+      >
+    </button> -->
+    <!-- <mat-menu #msgmenu="matMenu" class="topbar-dd cardWithShadow" xPosition="before">
+      <div class="d-flex align-items-center p-x-32 p-y-16">
+        <h6 class="f-s-16 f-w-600 m-0">Messages</h6>
+        <span class="m-l-auto">
+          <span class="bg-primary text-white p-x-8 p-y-4 f-w-500 rounded f-s-12"
+            >5 new</span
+          >
+        </span>
+      </div>
+      <button mat-menu-item class="p-x-32 p-y-16" *ngFor="let msg of msgs">
+        <div class="d-flex align-items-center">
+          <img [src]="msg.img" class="rounded-circle" width="48" />
+          <div class="m-l-16">
+            <h5 class="f-s-14 f-w-600 m-0 mat-subtitle-1">
+              {{ msg.title }}
+            </h5>
+            <span>{{ msg.subtitle }}</span>
+          </div>
+        </div>
+      </button>
+      <div class="p-y-12 p-x-32">
+        <button mat-stroked-button color="primary" class="w-100">
+          See all messages
+        </button>
+      </div>
+    </mat-menu> -->
+
+    <!-- --------------------------------------------------------------- -->
+    <!-- profile Dropdown -->
+    <!-- --------------------------------------------------------------- -->
+    <!-- <button
+    mat-icon-button
+    [matMenuTriggerFor]="profilemenu"
+    aria-label="Notifications"
+  >
+  <img
+  [src]="imgUrl"
+  class="rounded-circle object-cover"
+  width="35"
+  height="35"
+/>
+  </button>
+  <mat-menu #profilemenu="matMenu">
+    <ng-scrollbar
+      class="position-relative"
+      style="height: 17rem">
+      <div class="p-x-16 p-y-12">
+        <h6 class="f-s-16 f-w-600 m-0">User Profile</h6>
+        <div class="d-flex align-items-center p-b-24 b-b-1 m-t-16">
+          <img
+            [src]="imgUrl"
+            class="rounded-circle"
+            width="60"
+            height="60"
+          />
+          <div class="m-l-16">
+            <h6 class="f-s-12 f-w-600 m-0">{{nameUser}}</h6>
+            <span class="d-flex align-items-center f-s-12">
+              <i-tabler name="mail" class="icon-15 m-r-4"></i-tabler>
+              {{emailUser}}
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="p-x-16">
+        <a
+          class="p-y-12 text-decoration-none d-block text-hover-primary"
+          [routerLink]=""
+        >
+          <div class="d-flex align-items-center" style="cursor: pointer;" (click)="openDialogSettings()">
+            <button
+              mat-mini-fab
+              class="text-primary bg-light-primary shadow-none rounded"
+            >
+              <mat-icon>settings</mat-icon>
+            </button>
+
+            <div class="m-l-16">
+              <h5 class="f-s-12 f-w-600 m-0 textprimary mat-subtitle-1 hover-text">
+              Configuración del usuario
+              </h5>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="p-y-12 p-x-16">
+        <a
+          [routerLink]="['/authentication/side-login']"
+          mat-stroked-button
+          color="primary"
+          class="w-100"
+          >Logout</a
+        >
+      </div>
+    </ng-scrollbar>
+  </mat-menu>
+</mat-toolbar> -->

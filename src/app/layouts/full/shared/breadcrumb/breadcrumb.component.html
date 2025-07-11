@@ -1,0 +1,23 @@
+<div class="p-b-24 overflow-hidden">
+  <div>
+    <div class="row">
+      <div class="col-lg-8 container_breadcrumb">
+        <p class="m-0">
+          {{text}}
+        </p>
+        <button
+        class="button_new_user"
+        *ngIf="isButtonUser===true"
+        (click)="openDialogUser()">
+            + Nuevo Usuario
+          </button>
+        <button
+          class="button_new_user"
+          *ngIf="isButtonClaveSol===true"
+          (click)="openDialogClaveSol()">
+              + Nuevo Usuario Clave Sol
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

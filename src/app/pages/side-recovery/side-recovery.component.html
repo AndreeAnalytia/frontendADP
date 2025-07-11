@@ -1,0 +1,39 @@
+<div class="blank-layout-container justify-content-center">
+    <div>
+      <div class="col-lg-9 max-width-form">
+        <form (ngSubmit)="sendEmail(email)" #form="ngForm" class="m-t-30">
+          <img
+            src="https://analytia.pe/wp-content/uploads/2023/01/logo-analytia__1_-removebg-preview.png"
+            style="width: 100%;"
+            alt="logo"
+          />
+          <h2 class="span">Recupera tu cuenta</h2>
+          <br/>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <mat-label>Ingresa tu correo electrónico</mat-label>
+            <input
+              matInput
+              required
+              [(ngModel)]="email"
+              name="email"
+              #emailInput="ngModel"
+              placeholder="Correo electrónico"
+            />
+            <!-- Mensaje de error -->
+            <p *ngIf="emailInput.invalid && emailInput.touched" class="text-error">
+              El correo electrónico es requerido.
+            </p>
+          </mat-form-field>
+          <button
+            mat-flat-button
+            class="w-100 button_register"
+            type="submit"
+            [disabled]="emailInput.invalid"
+          >
+            Enviar
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  

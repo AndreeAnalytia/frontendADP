@@ -1,0 +1,23 @@
+.breadcrumb-item {
+  &:first-child {
+    &:after {
+      content: ">";
+      margin-left: 15px;
+    }
+  }
+  &.active {
+    margin-left: 20px;
+  }
+  a {
+    text-decoration: none;
+    color: $textPrimary;
+    font-size: 14px;
+  }
+}
+.container_breadcrumb{
+  display: flex; 
+  justify-content: space-between; 
+  flex: 0% !important; 
+  max-width: 100% !important; 
+  align-items: center;
+}

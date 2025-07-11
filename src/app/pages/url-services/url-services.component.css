@@ -1,0 +1,45 @@
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: gray;
+  padding: 1rem;
+}
+
+.text_num {
+  font-size: 18px;
+}
+
+.text_table {
+  font-size: 12px !important;
+}
+
+.text_border_active {
+  border: 1px solid #88DC65;
+  background-color: #88DC65;
+  padding: 2px 7px 2px 7px;
+  border-radius: 10px;
+}
+
+.text_border_blocked {
+  border: 1px solid red;
+  background-color: red;
+  padding: 2px 7px 2px 7px;
+  border-radius: 10px;
+}
+
+.text_header {
+  font-size: 14px !important;
+  color: gray;
+}
+
+.icon {
+  cursor: pointer;
+}
+/*# sourceMappingURL=starter.component.css.map */

@@ -1,0 +1,48 @@
+<div class="blank-layout-container justify-content-center">
+  <div>
+    <div class="col-lg-9 max-width-form">
+      <form (ngSubmit)="registerUser(name, email, password)" #form="ngForm" class="m-t-30">
+        <img
+          src="https://analytia.pe/wp-content/uploads/2023/01/logo-analytia__1_-removebg-preview.png"
+          style="width: 100%;"
+          alt="logo"
+        />
+        <h2 class="span">Crear nueva cuenta</h2>
+        <br/>
+        <mat-form-field appearance="outline" class="w-100" color="primary">
+          <mat-label>Nombre</mat-label>
+          <input
+            matInput
+            required
+            [(ngModel)]="name"
+            name="name"
+            placeholder="Nombre"
+          />
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="w-100" color="primary">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            required
+            [(ngModel)]="email"
+            name="email"
+            placeholder="Correo electrónico"
+            (blur)="hideError(email)"
+          />
+        </mat-form-field>
+        <p *ngIf="showErrorMessage" class="text-error">{{messageError}}</p>
+        <mat-form-field appearance="outline" class="w-100" color="primary">
+          <mat-label>Contraseña</mat-label>
+          <input
+            matInput
+            type="password"
+            required
+            [(ngModel)]="password"
+            name="password"
+            placeholder="Contraseña"
+          />
+        </mat-form-field>
+      </form>
+    </div>
+  </div>
+</div>

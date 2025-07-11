@@ -1,0 +1,23 @@
+
+.icon{
+    cursor: pointer;
+}
+.input_search{
+    font-family:Poppins; 
+    background-color:whitesmoke;
+    padding: 0.3rem 3rem 0.3rem 0.7rem;
+    border-radius: 15px; 
+    border: 1px solid #9b9b9b;
+    left:0;
+    width: 40%;
+    font-size: 13px;
+    height: 2rem;
+}
+input:focus{
+    outline:unset;
+    border: 2px solid rgb(30, 126, 229);
+}
+.items-header{
+    display: flex; 
+    justify-content: space-between;
+}

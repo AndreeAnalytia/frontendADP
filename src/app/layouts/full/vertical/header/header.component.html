@@ -1,0 +1,75 @@
+<mat-toolbar class="topbar" style="justify-content: space-between;" >
+  <!-- <app-branding></app-branding> -->
+
+  <!-- --------------------------------------------------------------- -->
+  <!-- Desktop Menu -->
+<div class="d-flex align-items-center">
+  <img class="img_logo" src="https://analytia.pe/wp-content/uploads/2023/01/logo-analytia__1_-removebg-preview.png"/>
+  <button
+    mat-icon-button
+    (click)="toggleCollapsed.emit()"
+    *ngIf="showToggle"
+    class="d-flex justify-content-center"
+  >
+    <i-tabler name="menu-2" class="icon-20 d-flex"></i-tabler>
+  </button>
+
+  <!-- Mobile Menu -->
+  <button
+    mat-icon-button
+    (click)="toggleMobileNav.emit()"
+    *ngIf="!showToggle"
+    class="d-flex justify-content-center"
+  >
+    <i-tabler name="menu-2" class="icon-20 d-flex"></i-tabler>
+  </button>
+</div>
+
+  <button
+    mat-icon-button
+    [matMenuTriggerFor]="profilemenu"
+    aria-label="Notifications"
+  >
+    <img
+      src="https://cdn-icons-png.flaticon.com/512/6932/6932514.png"
+      class="rounded-circle object-cover"
+      width="35"
+    />
+  </button>
+  <mat-menu #profilemenu="matMenu">
+    <ng-scrollbar
+      class="position-relative"
+      style="height: 13rem">
+      <div class="p-x-16 p-y-12">
+        <h6 class="f-s-16 f-w-600 m-0">User Profile</h6>
+        <div class="d-flex align-items-center p-b-24 b-b-1 m-t-16">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/6932/6932514.png"
+            class="rounded-circle"
+            width="60"
+            height="60"
+          />
+          <div class="m-l-16">
+            <h6 class="f-s-12 f-w-600 m-0">{{this.nameUser}}</h6>
+            <span class="d-flex align-items-center f-s-12">
+              <i-tabler name="mail" class="icon-15 m-r-4"></i-tabler>
+              {{this.emailUser}}
+            </span>
+            <h6 class="f-s-12 f-w-600 m-0" *ngIf="admin===false">TOKEN: {{this.token}}</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-y-12 p-x-16">
+        <a
+          [routerLink]="['/authentication/side-login']"
+          mat-stroked-button
+          color="secondary"
+          class="w-100"
+          (click)="signOut()"
+          >Logout</a
+        >
+      </div>
+    </ng-scrollbar>
+  </mat-menu>
+</mat-toolbar>

@@ -1,0 +1,36 @@
+<div class="blank-layout-container justify-content-center">
+  <div> 
+    <div class="col-lg-9 max-width-form">
+      <form class="m-t-30" (submit)="handleSubmit($event)">
+        <img
+          src="https://analytia.pe/wp-content/uploads/2023/01/logo-analytia__1_-removebg-preview.png"
+          style="width: 100%;"
+          alt="logo"
+        />
+        <h2 class="span">Restablecer contraseña</h2>
+        <br/>
+        
+        <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block">Nueva contraseña</mat-label>
+        <mat-form-field appearance="outline" class="w-100" color="primary">
+          <input matInput type="password" required [(ngModel)]="password" name="password" #u1 />
+        </mat-form-field>
+        
+        <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block">Confirmar contraseña</mat-label>
+        <mat-form-field appearance="outline" class="w-100" color="primary">
+          <input matInput type="password" required [(ngModel)]="confirmPassword" name="confirmPassword" #u2 />
+        </mat-form-field>
+        
+        <p class="text-error" *ngIf="showErrorMessage">{{messageError}}</p>
+
+        <button
+          mat-flat-button
+          class="w-100 button_register"
+          type="submit"
+        >
+          Enviar
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+

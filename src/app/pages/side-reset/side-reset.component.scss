@@ -1,0 +1,18 @@
+.span{
+    color: darkgray;
+}
+.button_register{
+    background: linear-gradient(to right, #fc692b 0%, #fe506a 100%) !important;
+    color:#fff !important;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border:0;
+    font-family: Poppins;
+    cursor: pointer;
+  }
+
+  .button-disabled {
+    background-color: lightgray;
+    color: white;
+    cursor: not-allowed;
+  }

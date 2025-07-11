@@ -1,0 +1,59 @@
+
+
+<app-breadcrumb class="header_breadcrumb" [text]="'Gestión de Logs'"></app-breadcrumb>
+<div class="mat-elevation-z8">
+  <div class="table_container">
+    <table mat-table [dataSource]="dataSource">
+      
+      <ng-container matColumnDef="cliente">
+        <th class="text_header" mat-header-cell *matHeaderCellDef> User Clave Sol </th>
+        <td class="text_table" mat-cell *matCellDef="let element"> {{element.userClaveSol.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="number">
+        <th class="text_header" mat-header-cell *matHeaderCellDef> Data </th>
+        <td class="text_table" mat-cell *matCellDef="let element"> {{element.data}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="tipo">
+        <th class="text_header" mat-header-cell *matHeaderCellDef> Tipo </th>
+        <td class="text_table" mat-cell *matCellDef="let element"> {{element.type}} </td>
+      </ng-container>
+      
+      <ng-container matColumnDef="fecha">
+        <th class="text_header" mat-header-cell *matHeaderCellDef> Fecha </th>
+        <td class="text_table"mat-cell *matCellDef="let element"> {{element.date}} </td>
+      </ng-container>
+      
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table> 
+  </div>
+  <div class="footer">
+    <div>
+      <span>{{this.pagination}} de {{this.paginationTotal}}</span>
+    </div>
+    <div class="items_footer"> 
+      <div class="cursor-pointer">
+        <div class="icon-wrapper text-black-50 icon_pagination" >
+          <svg (click)="previous()" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="icon_footer" xmlns="http://www.w3.org/2000/svg">
+            <path fill="none" d="M0 0h24v24H0z"></path>
+            <path d="M11.67 3.87L9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z"></path>
+          </svg>
+        </div>
+      </div>
+      <span class="text_num">{{num}}</span>
+      <div class="cursor-pointer">
+        <div class="icon-wrapper text-black-50 icon_pagination">
+          <svg stroke="currentColor" (click)="next()" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="icon_footer" xmlns="http://www.w3.org/2000/svg">
+            <path fill="none" d="M0 0h24v24H0V0z"></path>
+            <path d="M6.23 20.23L8 22l10-10L8 2 6.23 3.77 14.46 12z"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>   
+</div>
+  
+  
+  

@@ -1,0 +1,21 @@
+.button_save {
+  padding: 0.6rem 0;
+  width: 100%;
+  background-color: #1e88e5;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: Poppins;
+  color: white;
+}
+
+.button-disabled {
+  background-color: lightgray;
+  /* Cambia el color de fondo a gris o el color que desees */
+  color: white;
+  /* Cambia el color del texto a blanco o el color que desees */
+  cursor: not-allowed;
+  /* Cambia el cursor del mouse a "no permitido" */
+}
+/*# sourceMappingURL=modal-add.component.css.map */

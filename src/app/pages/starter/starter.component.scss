@@ -1,0 +1,95 @@
+
+.text_border_active{
+    border: 1px solid #88DC65;
+    background-color: #88DC65;
+    padding: 2px 7px 2px 7px;
+    border-radius:10px;
+    color: #fff;
+}
+.text_border_blocked{
+    border: 1px solid red;
+    background-color: red;
+    padding: 2px 7px 2px 7px;
+    border-radius:10px;
+    color: #fff;
+}
+.icon{
+    cursor: pointer;
+}
+.input_search{
+    font-family:Poppins; 
+    background-color:whitesmoke;
+    padding: 0.3rem 3rem 0.3rem 0.7rem;
+    border-radius: 15px; 
+    border: 1px solid #9b9b9b;
+    left:0;
+    width: 32%;
+    font-size: 13px;
+}
+input:focus{
+    outline:unset;
+    border: 2px solid rgb(30, 126, 229);
+}
+.items-header{
+    display: flex; 
+    justify-content: space-between;
+}
+@media screen and (min-width:560px) and (max-width: 900px) {
+    .text_border_active{
+        font-size: 10px !important;
+    }
+    .text_border_blocked{
+        font-size: 10px;
+    }
+    .mdc-data-table__cell{
+        padding:0 3px !important;
+    }
+    .mdc-data-table__header-cell{
+        padding: 0 3px !important;
+    }
+    .input_search{
+        padding: 0.2rem 2.5rem 0.2rem 0.5rem;
+        width: 50%;
+        font-size: 11px;
+    }
+}
+
+@media screen and (min-width:460px) and (max-width: 559px) {
+    .text_border_active{
+        font-size: 8px !important;
+    }
+    .text_border_blocked{
+        font-size: 8px;
+    }
+    .mdc-data-table__cell{
+        padding:0 3px !important;
+    }
+    .mdc-data-table__header-cell{
+        padding: 0 3px !important;
+    }
+    .input_search{
+        padding: 0.2rem 2.5rem 0.2rem 0.5rem;
+        width: 60%;
+        font-size: 9px;
+      }
+}
+
+@media screen and (max-width: 459px) {
+    .text_border_active{
+        font-size: 6px !important;
+    }
+    .text_border_blocked{
+        font-size: 6px;
+    }
+    .mdc-data-table__cell{
+        padding:0 3px !important;
+    }
+    .mdc-data-table__header-cell{
+        padding: 0 3px !important;
+    }
+    .input_search{
+        padding: 0.2rem 2.5rem 0.2rem 0.5rem;
+        width: 70%;
+        font-size: 7px;
+    }
+}

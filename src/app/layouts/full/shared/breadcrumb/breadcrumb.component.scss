@@ -1,0 +1,16 @@
+.button_new_user{
+    border-radius: 10px;
+    padding: 10px 30px;
+    border: transparent;
+    font-size: 14px;
+    font-family: Poppins;
+    color: $white;
+    font-weight: 400;
+    cursor: pointer;
+  }
+  
+  .button_new_user:hover{
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: #0075d5;
+    cursor: pointer;
+  }
